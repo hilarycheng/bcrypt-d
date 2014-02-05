@@ -1,0 +1,31 @@
+{
+	"description": "bcrypt hash function",
+	"authors": [
+			   "Hilary Cheng"
+	],
+	"homepage": "http://github.com/hilarycheng/bcrypt-d",
+	"license": "BSD 2-clause",
+	"name": "bcrypt-d",	
+    "buildRequirements":[
+        "allowWarnings"
+    ],
+    "configurations": [
+        {
+            "name": "library",
+            "targetType": "library",
+            "sourcePaths": ["bcrypt-d"],
+        },
+        {
+            "name": "import",
+            "targetType": "sourceLibrary",
+            "sourceFiles-posix": ["libbcrypt-d.a"],
+        },
+		{
+			"name": "unittest",
+			"targetType": "executable",
+			"dflags-dmd": ["-main"],
+			"dflags-gdc": ["-main"],
+			"dflags-ldc": ["-main"],
+		}
+    ]
+}
